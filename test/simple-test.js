@@ -156,7 +156,7 @@ describe('Hock HTTP Tests', () => {
         .head('/head')
         .reply(200, '', { 'Content-Type': 'plain/text' });
 
-			(function () {
+			(function getOut() {
 				hockInstance.done();
 			}).should.throw();
 		});

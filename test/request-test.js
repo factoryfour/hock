@@ -32,5 +32,25 @@ describe('Request unit tests', () => {
 				headers: {}
 			}).should.equal(false);
 		});
+
+		it('should work for a post with same body', () => {
+			const request = new Request({}, {
+				method: 'POST',
+				url: '/postEmpty',
+				headers: { 'foo-type': 'artischocke' },
+				body: {
+					hello: 'world'
+				}
+			});
+
+			request.isMatch({
+				method: 'POST',
+				url: '/postEmpty',
+				headers: { 'foo-type': 'artischocke' },
+				body: {
+					hello: 'world'
+				}
+			}).should.equal(true);
+		});
 	});
 });
