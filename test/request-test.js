@@ -38,9 +38,7 @@ describe('Request unit tests', () => {
 				method: 'POST',
 				url: '/postEmpty',
 				headers: { 'foo-type': 'artischocke' },
-				body: {
-					hello: 'world'
-				}
+				body: '*'
 			});
 
 			request.isMatch({
